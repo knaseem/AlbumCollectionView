@@ -10,6 +10,13 @@ import UIKit
 
 
 class CollectionViewController: UICollectionViewController {
+    @IBAction func addButtonTapped(sender: UIBarButtonItem) {
+        let item = DataItem(title: "New Item", kind: .Animal, imageName: "images/default.jpeg")
+        let index = allItems[0].count
+        allItems[0].append(item)
+        let indexPath = NSIndexPath(forItem: index, inSection: 0)
+        collectionView?.insertItemsAtIndexPaths([indexPath])
+    }
     
     var plantDataItems = [DataItem]()
     var animalDataItems = [DataItem]()
