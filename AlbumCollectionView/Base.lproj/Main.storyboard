@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10117" systemVersion="15F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="t09-D8-8Vl">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
+    </dependencies>
+    <scenes>
+        <!--Nature Pictures-->
+        <scene sceneID="8Sv-5a-dvE">
+            <objects>
+                <collectionViewController id="bUD-iz-3gn" customClass="CollectionViewController" customModule="AlbumCollectionView" customModuleProvider="target" sceneMemberID="viewController">
+                    <collectionView key="view" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" id="8jN-1y-kNQ">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="0.0" minimumInteritemSpacing="0.0" id="0sJ-6T-BvA">
+                            <size key="itemSize" width="50" height="50"/>
+                            <size key="headerReferenceSize" width="50" height="50"/>
+                            <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                            <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                        </collectionViewFlowLayout>
+                        <cells>
+                            <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="Cell" id="hdK-gH-42h" customClass="DataItemCell" customModule="AlbumCollectionView" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="114" width="50" height="50"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                                    <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="FE9-76-b5g">
+                                            <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
+                                        </imageView>
+                                    </subviews>
+                                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                </view>
+                                <constraints>
+                                    <constraint firstAttribute="bottom" secondItem="FE9-76-b5g" secondAttribute="bottom" id="HcF-xe-wBS"/>
+                                    <constraint firstItem="FE9-76-b5g" firstAttribute="top" secondItem="hdK-gH-42h" secondAttribute="top" id="Tda-6t-dhT"/>
+                                    <constraint firstAttribute="trailing" secondItem="FE9-76-b5g" secondAttribute="trailing" id="ewS-gg-FME"/>
+                                    <constraint firstItem="FE9-76-b5g" firstAttribute="leading" secondItem="hdK-gH-42h" secondAttribute="leading" id="hRM-DT-WRN"/>
+                                </constraints>
+                                <connections>
+                                    <outlet property="dataItemImageView" destination="FE9-76-b5g" id="YBU-eA-jvH"/>
+                                </connections>
+                            </collectionViewCell>
+                        </cells>
+                        <collectionReusableView key="sectionHeaderView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="SectionHeader" id="pqQ-WA-OKi" customClass="DataItemHeader" customModule="AlbumCollectionView" customModuleProvider="target">
+                            <rect key="frame" x="0.0" y="64" width="600" height="50"/>
+                            <autoresizingMask key="autoresizingMask"/>
+                            <subviews>
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sGK-JT-xta">
+                                    <rect key="frame" x="0.0" y="0.0" width="600" height="50"/>
+                                    <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
+                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                    <nil key="highlightedColor"/>
+                                </label>
+                            </subviews>
+                            <constraints>
+                                <constraint firstAttribute="trailing" secondItem="sGK-JT-xta" secondAttribute="trailing" id="4HC-Mi-dHJ"/>
+                                <constraint firstAttribute="bottom" secondItem="sGK-JT-xta" secondAttribute="bottom" id="h0y-kv-qkl"/>
+                                <constraint firstItem="sGK-JT-xta" firstAttribute="leading" secondItem="pqQ-WA-OKi" secondAttribute="leading" id="lWg-4a-uXW"/>
+                                <constraint firstItem="sGK-JT-xta" firstAttribute="top" secondItem="pqQ-WA-OKi" secondAttribute="top" id="m2E-aC-MUc"/>
+                            </constraints>
+                            <connections>
+                                <outlet property="titleLabel" destination="sGK-JT-xta" id="zHk-Tj-neK"/>
+                            </connections>
+                        </collectionReusableView>
+                        <connections>
+                            <outlet property="dataSource" destination="bUD-iz-3gn" id="v3u-SA-OSZ"/>
+                            <outlet property="delegate" destination="bUD-iz-3gn" id="Yto-ce-I2V"/>
+                        </connections>
+                    </collectionView>
+                    <navigationItem key="navigationItem" title="Nature Pictures" id="AkU-eo-eBg">
+                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="p0i-7T-DSD">
+                            <color key="tintColor" red="0.0" green="0.50196081400000003" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                        </barButtonItem>
+                    </navigationItem>
+                </collectionViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="54h-vE-Lyv" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1049" y="137"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="044-y0-Vck">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="t09-D8-8Vl" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="ALd-gB-ys5">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="bUD-iz-3gn" kind="relationship" relationship="rootViewController" id="nDw-VC-1Bc"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="okb-12-0lW" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="237" y="137"/>
+        </scene>
+    </scenes>
+</document>
