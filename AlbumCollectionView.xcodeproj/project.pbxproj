@@ -14,8 +14,8 @@
 		E9F9A88B1D0C688C001CCD56 /* CollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9F9A88A1D0C688C001CCD56 /* CollectionViewController.swift */; };
 		E9F9A88D1D0C68CE001CCD56 /* DataItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9F9A88C1D0C68CE001CCD56 /* DataItem.swift */; };
 		E9F9A88F1D0C6A59001CCD56 /* DataItemCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9F9A88E1D0C6A59001CCD56 /* DataItemCell.swift */; };
-		E9F9A8911D0C6D6A001CCD56 /* images in Resources */ = {isa = PBXBuildFile; fileRef = E9F9A8901D0C6D6A001CCD56 /* images */; };
 		E9F9A8931D0C736E001CCD56 /* DataItemHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9F9A8921D0C736E001CCD56 /* DataItemHeader.swift */; };
+		E9F9A8971D0D0261001CCD56 /* images in Resources */ = {isa = PBXBuildFile; fileRef = E9F9A8961D0D0261001CCD56 /* images */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -28,8 +28,8 @@
 		E9F9A88A1D0C688C001CCD56 /* CollectionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CollectionViewController.swift; sourceTree = "<group>"; };
 		E9F9A88C1D0C68CE001CCD56 /* DataItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataItem.swift; sourceTree = "<group>"; };
 		E9F9A88E1D0C6A59001CCD56 /* DataItemCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataItemCell.swift; sourceTree = "<group>"; };
-		E9F9A8901D0C6D6A001CCD56 /* images */ = {isa = PBXFileReference; lastKnownFileType = folder; path = images; sourceTree = "<group>"; };
 		E9F9A8921D0C736E001CCD56 /* DataItemHeader.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataItemHeader.swift; sourceTree = "<group>"; };
+		E9F9A8961D0D0261001CCD56 /* images */ = {isa = PBXFileReference; lastKnownFileType = folder; path = images; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -66,7 +66,7 @@
 				E9F9A87C1D0C67A2001CCD56 /* Main.storyboard */,
 				E9F9A87F1D0C67A3001CCD56 /* Assets.xcassets */,
 				E9F9A8811D0C67A3001CCD56 /* LaunchScreen.storyboard */,
-				E9F9A8901D0C6D6A001CCD56 /* images */,
+				E9F9A8961D0D0261001CCD56 /* images */,
 				E9F9A8841D0C67A3001CCD56 /* Info.plist */,
 				E9F9A88A1D0C688C001CCD56 /* CollectionViewController.swift */,
 				E9F9A88C1D0C68CE001CCD56 /* DataItem.swift */,
@@ -108,7 +108,6 @@
 				TargetAttributes = {
 					E9F9A8741D0C67A2001CCD56 = {
 						CreatedOnToolsVersion = 7.3.1;
-						DevelopmentTeam = UYERQ8N8DX;
 					};
 				};
 			};
@@ -135,7 +134,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				E9F9A8911D0C6D6A001CCD56 /* images in Resources */,
+				E9F9A8971D0D0261001CCD56 /* images in Resources */,
 				E9F9A8831D0C67A3001CCD56 /* LaunchScreen.storyboard in Resources */,
 				E9F9A8801D0C67A3001CCD56 /* Assets.xcassets in Resources */,
 				E9F9A87E1D0C67A2001CCD56 /* Main.storyboard in Resources */,
@@ -268,6 +267,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				INFOPLIST_FILE = AlbumCollectionView/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = naseem.AlbumCollectionView;
@@ -279,6 +279,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				INFOPLIST_FILE = AlbumCollectionView/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = naseem.AlbumCollectionView;
@@ -305,6 +306,7 @@
 				E9F9A8891D0C67A3001CCD56 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

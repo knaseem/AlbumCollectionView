@@ -21,15 +21,18 @@ class DataItem {
 }
 
 enum Kind: Int {
+    case Beach
     case Plant
     case Animal
     
     func description() -> String {
         switch self {
+        case .Beach:
+            return "Best Beaches 💧💧💧"
         case .Plant:
-            return "Plants"
+            return "Favourite Plants 🌿 🌳"
         case .Animal:
-            return "Animals"
+            return "Animals 🐼 🐱"
         }
     }
 }

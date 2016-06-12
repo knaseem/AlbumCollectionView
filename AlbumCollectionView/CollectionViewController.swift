@@ -16,30 +16,46 @@ class CollectionViewController: UICollectionViewController {
         allItems[0].append(item)
         let indexPath = NSIndexPath(forItem: index, inSection: 0)
         collectionView?.insertItemsAtIndexPaths([indexPath])
+        
+        
     }
     
+    var beachDataItems = [DataItem]()
     var plantDataItems = [DataItem]()
     var animalDataItems = [DataItem]()
+    
     var allItems = [[DataItem]]()
-
+    
     override func viewDidLoad() {
         
         for i in 1...12 {
             if i > 9 {
-                plantDataItems.append(DataItem(title: "Title #\(i)", kind: Kind.Plant, imageName: "images/img\(i).jpg"))
-            } else {
-                plantDataItems.append(DataItem(title: "Title #0\(i)", kind: Kind.Plant, imageName: "images/img0\(i).jpg"))
+                beachDataItems.append(DataItem(title: "Title #\(i)", kind: Kind.Beach, imageName: "images/beach\(i).jpg"))
+            } else  {
+                beachDataItems.append(DataItem(title: "Title #0\(i)", kind: Kind.Beach, imageName: "images/beach0\(i).jpg"))
             }
         }
+        
+        
+        for i in 1...12 {
+            if i > 9 {
+                plantDataItems.append(DataItem(title: "Another Title #\(i)", kind: Kind.Plant, imageName: "images/img\(i).jpg"))
+            } else {
+                plantDataItems.append(DataItem(title: "Another Title #0\(i)", kind: Kind.Plant, imageName: "images/img0\(i).jpg"))
+            }
+        }
+        
         
         for i in 1...12 {
             if i > 9 {
                 animalDataItems.append(DataItem(title: "Another Title #\(i)", kind: Kind.Animal, imageName: "images/anim\(i).jpg"))
-            } else {
+            } else  {
                 animalDataItems.append(DataItem(title: "Another Title #0\(i)", kind: Kind.Animal, imageName: "images/anim0\(i).jpg"))
             }
         }
         
+        
+        allItems.append(beachDataItems)
         allItems.append(plantDataItems)
         allItems.append(animalDataItems)
         
@@ -49,31 +65,33 @@ class CollectionViewController: UICollectionViewController {
         let layout = collectionViewLayout as! UICollectionViewFlowLayout
         layout.itemSize = CGSize(width: width, height: width)
         
+        
+        
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
-
         
-
+        
+        
         // Do any additional setup after loading the view.
     }
-
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-
+    
     /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        // Get the new view controller using [segue destinationViewController].
-        // Pass the selected object to the new view controller.
-    }
-    */
-
+     // MARK: - Navigation
+     
+     // In a storyboard-based application, you will often want to do a little preparation before navigation
+     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+     // Get the new view controller using [segue destinationViewController].
+     // Pass the selected object to the new view controller.
+     }
+     */
+    
     // MARK: UICollectionViewDataSource
-
+    
     override func numberOfSectionsInCollectionView(collectionView: UICollectionView) -> Int {
         return allItems.count
     }
@@ -101,35 +119,50 @@ class CollectionViewController: UICollectionViewController {
         return sectionHeader
     }
     
-    // MARK: UICollectionViewDelegate
-
-    /*
-    // Uncomment this method to specify if the specified item should be highlighted during tracking
-    override func collectionView(collectionView: UICollectionView, shouldHighlightItemAtIndexPath indexPath: NSIndexPath) -> Bool {
-        return true
+    // moves cells within section and other section:
+    override func collectionView(collectionView: UICollectionView, moveItemAtIndexPath sourceIndexPath: NSIndexPath, toIndexPath destinationIndexPath: NSIndexPath) {
+        NSLog("Move at index path called")
     }
-    */
-
-    /*
-    // Uncomment this method to specify if the specified item should be selected
-    override func collectionView(collectionView: UICollectionView, shouldSelectItemAtIndexPath indexPath: NSIndexPath) -> Bool {
-        return true
-    }
-    */
-
-    /*
-    // Uncomment these methods to specify if an action menu should be displayed for the specified item, and react to actions performed on the item
-    override func collectionView(collectionView: UICollectionView, shouldShowMenuForItemAtIndexPath indexPath: NSIndexPath) -> Bool {
-        return false
-    }
-
-    override func collectionView(collectionView: UICollectionView, canPerformAction action: Selector, forItemAtIndexPath indexPath: NSIndexPath, withSender sender: AnyObject?) -> Bool {
-        return false
-    }
-
-    override func collectionView(collectionView: UICollectionView, performAction action: Selector, forItemAtIndexPath indexPath: NSIndexPath, withSender sender: AnyObject?) {
     
+    // delete cells
+    
+        override func collectionView(collectionView: UICollectionView, didSelectItemAtIndexPath indexPath: NSIndexPath) {
+        
+        
+        self.allItems[indexPath.section].removeAtIndex(indexPath.row)
+        self.collectionView?.deleteItemsAtIndexPaths([indexPath])
     }
-    */
-
+    
+    
+    // MARK: UICollectionViewDelegate
+    
+    /*
+     // Uncomment this method to specify if the specified item should be highlighted during tracking
+     override func collectionView(collectionView: UICollectionView, shouldHighlightItemAtIndexPath indexPath: NSIndexPath) -> Bool {
+     return true
+     }
+     */
+    
+    /*
+     // Uncomment this method to specify if the specified item should be selected
+     override func collectionView(collectionView: UICollectionView, shouldSelectItemAtIndexPath indexPath: NSIndexPath) -> Bool {
+     return true
+     }
+     */
+    
+    /*
+     // Uncomment these methods to specify if an action menu should be displayed for the specified item, and react to actions performed on the item
+     override func collectionView(collectionView: UICollectionView, shouldShowMenuForItemAtIndexPath indexPath: NSIndexPath) -> Bool {
+     return false
+     }
+     
+     override func collectionView(collectionView: UICollectionView, canPerformAction action: Selector, forItemAtIndexPath indexPath: NSIndexPath, withSender sender: AnyObject?) -> Bool {
+     return false
+     }
+     
+     override func collectionView(collectionView: UICollectionView, performAction action: Selector, forItemAtIndexPath indexPath: NSIndexPath, withSender sender: AnyObject?) {
+     
+     }
+     */
+    
 }
