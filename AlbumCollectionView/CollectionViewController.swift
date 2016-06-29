@@ -10,13 +10,31 @@ import UIKit
 
 
 class CollectionViewController: UICollectionViewController {
+    
+    @IBAction func deleteButtonTapped(sender: UIBarButtonItem) {
+        let alertController = UIAlertController(title: "Delete Image", message: "Tap on Image to Delete", preferredStyle: .Alert)
+        
+        /* let deleteAction = UIAlertAction(title: "Delete", style: UIAlertActionStyle.Destructive, handler: {(alert :UIAlertAction!) in
+         println("Delete button tapped")
+         })
+         alertController.addAction(deleteAction)    */
+        
+        let okAction = UIAlertAction(title: "Ok", style: .Default) {
+            (_) -> Void in }
+        
+        alertController.addAction(okAction)
+        
+        
+        presentViewController(alertController, animated: true, completion: nil)
+    }
+    
+    
     @IBAction func addButtonTapped(sender: UIBarButtonItem) {
         let item = DataItem(title: "New Item", kind: .Animal, imageName: "images/default.jpeg")
         let index = allItems[0].count
         allItems[0].append(item)
         let indexPath = NSIndexPath(forItem: index, inSection: 0)
         collectionView?.insertItemsAtIndexPaths([indexPath])
-        
         
     }
     
@@ -119,19 +137,19 @@ class CollectionViewController: UICollectionViewController {
         return sectionHeader
     }
     
-    // moves cells within section and other section:
-    override func collectionView(collectionView: UICollectionView, moveItemAtIndexPath sourceIndexPath: NSIndexPath, toIndexPath destinationIndexPath: NSIndexPath) {
-        NSLog("Move at index path called")
-    }
+    
     
     // delete cells
     
-        override func collectionView(collectionView: UICollectionView, didSelectItemAtIndexPath indexPath: NSIndexPath) {
-        
+    override func collectionView(collectionView: UICollectionView, didSelectItemAtIndexPath indexPath: NSIndexPath) {
         
         self.allItems[indexPath.section].removeAtIndex(indexPath.row)
         self.collectionView?.deleteItemsAtIndexPaths([indexPath])
+        
+        
     }
+    
+    
     
     
     // MARK: UICollectionViewDelegate

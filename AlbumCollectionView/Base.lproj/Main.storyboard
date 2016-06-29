@@ -3,6 +3,7 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
+        <capability name="Navigation items with more than one left or right bar item" minToolsVersion="7.0"/>
     </dependencies>
     <scenes>
         <!--Nature Pictures-->
@@ -71,17 +72,25 @@
                         </connections>
                     </collectionView>
                     <navigationItem key="navigationItem" title="Nature Pictures" id="AkU-eo-eBg">
-                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="p0i-7T-DSD">
-                            <color key="tintColor" red="0.0" green="0.50196081400000003" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                            <connections>
-                                <action selector="addButtonTapped:" destination="bUD-iz-3gn" id="r3F-KG-c6I"/>
-                            </connections>
-                        </barButtonItem>
+                        <rightBarButtonItems>
+                            <barButtonItem systemItem="add" id="p0i-7T-DSD">
+                                <color key="tintColor" red="0.0" green="0.50196081400000003" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <connections>
+                                    <action selector="addButtonTapped:" destination="bUD-iz-3gn" id="r3F-KG-c6I"/>
+                                </connections>
+                            </barButtonItem>
+                            <barButtonItem systemItem="trash" id="wbw-gp-owX">
+                                <color key="tintColor" red="1" green="0.070441809490000007" blue="0.24569394680000001" alpha="1" colorSpace="calibratedRGB"/>
+                                <connections>
+                                    <action selector="deleteButtonTapped:" destination="bUD-iz-3gn" id="yZn-9N-GLX"/>
+                                </connections>
+                            </barButtonItem>
+                        </rightBarButtonItems>
                     </navigationItem>
                 </collectionViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="54h-vE-Lyv" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1049" y="137"/>
+            <point key="canvasLocation" x="1249" y="126"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="044-y0-Vck">
